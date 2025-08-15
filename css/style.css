@@ -1,0 +1,4 @@
+body { font-family: system-ui, sans-serif; margin: 2rem; } 
+h1 { margin-bottom: .5rem; } 
+button { padding: .6rem 1rem; border: none; cursor: pointer; } 
+button:hover { opacity: .8; } 
