@@ -1,22 +1,50 @@
- 
 <!doctype html> 
 <html lang='es'> 
 <head> 
   <meta charset='utf-8'> 
   <meta name='viewport' content='width=device-width, initial-scale=1'> 
-  <title>Mi Web</title> 
+  <title>Contador de Clics</title> 
   <link rel='stylesheet' href='css/styles.css'> 
+  <style>
+    /* Estilos básicos para el contador */
+    #contador {
+      font-size: 1.5em;
+      margin: 20px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
 </head> 
 <body> 
   <header> 
-    <h1>¡Hola, Git y GitHub! Creado por Robin Castillo</h1> 
+    <h1>¡Hola qué tal como estás hoy, Git y GitHub! Creado por Robin Castillo</h1> 
   </header> 
   <main> 
-    <p>Este es mi primer sitio publicado desde Git.</p> 
-    <button id='btn'>Haz clic</button> 
+    <p>Este es mi primer sitio publicado desde Git que tengan un gran día.</p> 
+    <button id='btn'>Haz clic</button>
+    <div id="contador">Clics: 0</div>
   </main> 
   <script> 
-    document.getElementById('btn').addEventListener('click', () => alert('¡Funciona!')); 
+    // Inicializamos el contador
+    let contador = 0;
+    const elementoContador = document.getElementById('contador');
+    const boton = document.getElementById('btn');
+    
+    // Función para manejar el clic
+    function manejarClic() {
+      contador++; // Incrementamos el contador
+      elementoContador.textContent = `Clics: ${contador}`; // Actualizamos el texto
+      
+      // Opcional: Mostrar alerta cada 5 clics
+      if (contador % 5 === 0) {
+        alert(`¡Llevas ${contador} clics!`);
+      }
+    }
+    
+    // Asignamos el evento
+    boton.addEventListener('click', manejarClic);
   </script> 
 </body> 
 </html>
